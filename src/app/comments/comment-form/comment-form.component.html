@@ -1,0 +1,54 @@
+<div class="card mt-5 shadow-effect">
+    <div class="card-body text-info">
+        <h4>Leave a Comment</h4>
+        <p>You can leave a comment using this comment form</p>
+       <!-- <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="">Name</label>
+              <input type="text" class="form-control shadow-effect" placeholder="Enter Your Name" formControlName="name">
+            </div>
+            <div class="form-group">
+              <label for="">Comment</label>
+              <textarea cols="30" rows="10" class="form-control shadow-effect" placeholder="Add Your Comment Here" formControlName="comment"></textarea>
+            </div>
+            <button type="submit" class="btn btn-info btn-theme" [disabled]="!commentForm.valid">Add a Comment</button>
+          </form>
+        -->
+          <form  class="form-inline mb-5 mt-5 " #commentForm=ngForm (ngSubmit)="onSubmit(commentForm.value)">
+          
+
+            <div class="form-group  col-md-5 text-secondary">
+                <label for="">name:</label>
+                <input type="text"  class="from-control "
+                 placeholder="Your name"
+                 name="name"
+                 #Name='ngModel'
+                 ngModel
+                 [ngClass]="{'is-invalid':Name.touched && Name.invalid}"
+                required>
+                <div class="text-danger" *ngIf="Name.touched && Name.invalid">
+                    <div *ngIf="Name.errors?.required">Name is Required</div>
+                </div>
+            </div>
+            <div class="form-group col-md-5 text-secondary">
+                <label for="">Comment:</label>
+                <textarea cols="30" rows="10" class="form-control shadow-effect" 
+                placeholder="Add Your Comment Here"
+                name="comment"
+                #Comment='ngModel'
+                ngModel [ngClass]="{'is-invalid':Comment.touched && Comment.invalid}"
+                required></textarea>
+                 <div class="text-danger" *ngIf="Comment.touched && Comment.invalid">
+                    <div *ngIf="Comment.errors?.required">Email is Required</div>
+
+                </div>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-info btn-block btn-theme" [disabled]="commentForm.invalid">Add Comments</button>
+            </div>
+        </form>
+          
+
+    </div>
+</div>
+  

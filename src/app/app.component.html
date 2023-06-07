@@ -1,0 +1,23 @@
+<h1 class="text-primary">Angular blog website</h1>
+<app-headers></app-headers>
+
+
+<app-category-navbar></app-category-navbar>
+
+<div class="app-body">
+
+  <router-outlet></router-outlet>
+  <app-dark-mode></app-dark-mode>
+
+</div>
+<div class="container mt-5 mb-5">
+  <div class="row justify-content-center">
+    <app-subscription-form ></app-subscription-form>
+    <button (click)="scrollToTop()" class="btn btn-secondary rounded-circle scroll-to-top">
+       <h4 text-color="red">Top</h4>
+      <i class="fas fa-angle-up"></i>
+  </button>
+
+  </div>
+</div>
+<app-footers></app-footers>

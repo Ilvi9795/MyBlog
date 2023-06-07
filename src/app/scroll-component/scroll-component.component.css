@@ -1,0 +1,35 @@
+.scroller {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 40px;
+    height: 80px;
+    background-color: #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 9999;
+  }
+  
+  .scroll-up,
+  .scroll-down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    width: 100%;
+    height: 50%;
+  }
+  
+  .scroll-up:hover,
+  .scroll-down:hover {
+    background-color: #ddd;
+  }
+  
+  .content {
+    height: 1000px;
+  }
+  

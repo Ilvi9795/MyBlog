@@ -1,0 +1,25 @@
+<div class="card mb-5 mt-5 pb-5 shadow-effect">
+    <div class="card-body">
+        <h4 class="mt-3 mb-3">Total comments: {{ totalComments }}</h4>
+        <div class="comment-box mt-3">
+            <ul>
+                <li *ngFor="let comment of comments.slice(0, numCommentsToShow)">
+
+            <h6 class="mb-0 text-info">{{comment.data.name}}</h6>
+            <small class="text-primary">Last Updated-:{{comment.data.timestamp}}</small>
+            <h5 class="mt-1 mb-2 text-secondary">
+                 {{comment.data.comment}}
+            </h5>
+            
+            <a class="text-secondary mt-1">Reply</a>
+            <a class ="text-secondary mt-1 ml-3">View-Reply</a>
+            <br>
+        </li>
+            
+        </ul>
+
+        </div>
+        <button (click)="loadMoreComments()" *ngIf="comments.length > numCommentsToShow">Load More</button>
+
+    </div>
+</div>
